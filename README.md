@@ -1,5 +1,5 @@
 ## Requirement
-* Schedule: pip3 install schedule
+* Schedule: ```pip3 install schedule```
 
 ## How to run it
 python3 send.py
