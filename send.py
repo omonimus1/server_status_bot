@@ -26,9 +26,7 @@ def report():
 
         response = os.system("ping -c 1 " + website)
         #and then check the response...
-        if response == 0:
-            pass
-        else:
+        if response != 0:
             telegram_bot_sendtext(website + ' server is down')
   
 
