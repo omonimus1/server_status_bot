@@ -22,12 +22,13 @@ def report():
     for website in url_list:
         page = requests.get(website)
         if(page.status_code != 200):
-		telegram_bot_sendtext(website + 'returns a ' + page.status_code)
+            telegram_bot_sendtext(website+' returns status: '+ str(page.status_code))
 
         response = os.system("ping -c 1 " + website)
         #and then check the response...
-        if response != 0:
+        if response == 0:
             telegram_bot_sendtext(website + ' server is down')
+
   
 
 if __name__ == "__main__":
