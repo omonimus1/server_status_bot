@@ -1,6 +1,8 @@
 import time
 import schedule
 import requests
+import os
+
 
 # List of URLS I want to monitor
 url_list = [
@@ -20,10 +22,17 @@ def report():
     for website in url_list:
         page = requests.get(website)
         if(page.status_code != 200):
-		telegram_bot_sendtext(website + ' is down')
+		telegram_bot_sendtext(website + 'returns a ' + page.status_code)
+
+        response = os.system("ping -c 1 " + website)
+        #and then check the response...
+        if response == 0:
+            pass
+        else:
+            telegram_bot_sendtext(website + ' server is down')
+  
 
 
-while True:
     report()
-    time.sleep(20)
+    
     
