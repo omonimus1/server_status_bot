@@ -16,7 +16,7 @@ mail_from = ''
 
 # List of urls that we want to Manage: Website/Hostname: Email of the person responsible
 url_list = {
-    'davidepollicino.com'  : 'davidepollicino2015@gmail.com'
+    'http://davidepollicino.com/'  : 'davidepollicino2015@gmail.com'
 }
 
 
